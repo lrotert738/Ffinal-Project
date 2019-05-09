@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron jumboCakes">
+    <h1>Welcome</h1>
+    <p>Want to make <span>MONEY</span> from home?  Or save LOTS of money on your kids birthday cakes?</p>
+    <p>I can show you how</p>
+</div>
+<div class="clearfix"></div>
+
+<div id="myIndexSlider" class="container">
+    <!--<a href="#" style="position:absolute; top:50%">Top of Page</a>-->
+    @*<article class="floating-box1">*@
+
+    @*<div class="row">*@  
+        <article class="col-md-5" style="float:left;">
+            <!-- class = "jQuery-slider" MUST match the class in the jQuery -->
+            <div class="jQuery-slider img-responsive">
+                @*<div class="alignLeft">
+                        <a href="#" onclick="restoreDisplay()">Top of Page</a>
+                    </div>*@
+                <ul>
+                    <li>
+                        <img src="~/Content/images/Chris-Wedding-web.gif" class="img-responsive" />
+                    </li>
+                    <li>
+                        <img src="~/Content/images/Turkey-web.gif" class="img-responsive" />
+                    </li>
+                    <li>
+                        <img src="~/Content/images/Christmas1-web.gif" class="img-responsive" />
+                    </li>
+                    <li>
+                        <img src="~/Content/images/graduation1web.gif" class="img-responsive" />
+                    </li>
+                    <li>
+                        <img src="~/Content/images/Baby-Block-web.gif" class="img-responsive" />
+                    </li>
+                </ul>
+            </div>
+        </article>
+        <article class="col-md-5 indexText" style="float:right;">
+            <p>You can make cakes just like these!!</p>
+            <p>The average cost of a <span>QUALITY</span> birthday cake is over $80.00</p>
+            <p>Wedding cakes go from between $4.00 to $15.00 a slice</p>
+            <p>It is easy to see how you can easily make some money or at least save some money by doing decorating cakes for yourself or your friends </p>
+            <p>Let me show you how!!</p>
+        </article>
+    @*</div>*@  
+      
+</div>  <!-- end div id="myIndexSlider" -->
+<div class="clearfix"></div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="~/Content/js/unslider.js"></script>
+
+    @*<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+    @*<script>
+            jQuery(document).ready(function ($) {
+                $('.my-slider').unslider();
+            });
+        </script>*@
+    <script>
+        $(function () {
+            $('.jQuery-slider').unslider({
+                autoplay: true
+            });
+        });
+    </script>
+    <script>
+
+        $(function () {
+            // In order for this to work your anchor tag or ActionLink MUST
+            // have an ID.  That is the value below that we are selecting.
+            // You would need the javascript on EACH view (Create, edit, and
+            // delete) for the link to highlight while on those views.
+            $('#lnkPortfolio').addClass('current');
+        });
+    </script>
+
+}

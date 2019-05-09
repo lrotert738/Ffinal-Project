@@ -1,0 +1,97 @@
+﻿@model FinalProject.UI.MVC.Models.ContactViewModel
+
+@{
+    ViewBag.Title = "Contact";
+}
+<div class="pageBackground">
+    <div class="col-sm-6" style="float:left;">
+
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3087.4146901495396!2d-94.68573368417854!3d39.30152257951037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c05e8653f519e1%3A0x5abaaddc7b53e954!2s11500+N+Ambassador+Dr%2C+Kansas+City%2C+MO+64153!5e0!3m2!1sen!2sus!4v1519092166305" width="500" height="450" frameborder="0" style="text-align:center; " allowfullscreen></iframe>
+    </div>
+    <div class="col-sm-5" style="float:right;">
+        <div class="contactInfo">
+            <p>Cakes-R-US</p>
+            <p>11500 Ambassador Drive</p>
+            <p>Kansas City, MO. 64153</p>
+            <p><i class="fa fa-phone"></i>816-807-7445</p>
+        </div>
+        
+    </div>
+
+<div class="clearfix"></div>
+@*</div>*@
+@*<div>*@
+    <section id="contact-page"@*class="pageBackground"*@>
+        <div class="container">
+            <div class="row contact-wrap">
+                <div class="status alert alert-success" style="display: none"></div>
+
+                @using (Html.BeginForm())
+            {
+                    @Html.AntiForgeryToken()
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Name)
+                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Name" })
+
+                            @Html.ValidationMessageFor(x => x.Name)
+                        </div> @* end div class for name *@
+
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Email)
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Email" })
+
+                            @Html.ValidationMessageFor(x => x.Email)
+                        </div> @* end div class for email *@
+
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Phone)
+                            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", placeholder = "Phone" })
+
+                        </div> @* end div class for Phone *@
+
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Company)
+                            @Html.TextBoxFor(x => x.Company, new { @class = "form-control", placeholder = "Company" })
+
+                        </div> @* end div class for Phone *@
+
+                    </div> @* end <div class="ol-sm-5 col-sm-offset-1"> *@
+
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Subject)
+                            @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", placeholder = "Subject" })
+                            @Html.ValidationMessageFor(x => x.Subject)
+                        </div> @* end div class for subject *@
+
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Message)
+                            @Html.TextAreaFor(x => x.Message,
+                        new
+                        {
+                            @class = "form-control",
+                            id = "Message",
+                            rows = "8",
+                            placeholder = "Your message here",
+                            title = "Please be concise but make sure to include all" +
+                            "important details"
+                        })
+                            @Html.ValidationMessageFor(x => x.Message)
+                        </div> @* end div class for Message *@
+
+                    </div> @* end <div class="col-sm-5">  *@
+
+                    <div class="form-group col-md-2 col-md-offset-6">
+                        <input type="submit" name="submit"
+                               class="btn btn-primary"
+                               value="Submit" />
+                    </div>
+
+                }
+
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#contact-page-->
+</div> <!-- end class=larryContact -->
